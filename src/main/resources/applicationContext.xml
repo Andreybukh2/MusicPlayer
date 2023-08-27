@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!-- <Бины музыкальных типов> -->
+    <bean id="Been01" class="ru.maxima.spring.Model.MusicType01">
+        <property name="name" value="Music01"/>
+    </bean>
+    <bean id="Been02" class="ru.maxima.spring.Model.MusicType02">
+        <property name="name" value="Music02"/>
+    </bean>
+    <bean id="Been03" class="ru.maxima.spring.Model.MusicType03">
+        <property name="name" value="Music03"/>
+    </bean>
+
+    <!-- Бин с бинами музыкальных типов -->
+    <bean id="player" name="player" class="ru.maxima.spring.Model.Player">
+        <property name="listOfMusic">
+        <list>
+            <ref bean="Been01"/>
+            <ref bean="Been02"/>
+            <ref bean="Been03"/>
+        </list>
+        </property>
+    </bean>
+</beans>
